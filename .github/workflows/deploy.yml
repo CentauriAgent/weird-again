@@ -19,5 +19,5 @@ jobs:
           username: ${{ secrets.PROD_USER }}
           key: ${{ secrets.PROD_SSH_KEY }}
           port: ${{ secrets.PROD_PORT }}
-          source: "index.html,og-image.html"
+          source: "index.html,og-image.html,og-image.jpg,favicon.svg,favicon-32.png,favicon-16.png,apple-touch-icon.png"
           target: ${{ secrets.PROD_PATH }}
