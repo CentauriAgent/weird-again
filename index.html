@@ -131,7 +131,7 @@ section{padding:6rem 0}
 .fun-feat .emoji{font-size:3rem;margin-bottom:1rem;display:block}
 .fun-feat h3{font-size:1.1rem;margin-bottom:.4rem}
 .fun-feat p{color:var(--text-dim);font-size:.9rem}
-.vibe-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:80px;gap:.5rem;margin-top:3rem;border-radius:var(--radius);overflow:hidden}
+.vibe-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:80px;gap:.5rem;margin-top:3rem;border-radius:var(--radius);overflow:hidden;grid-auto-flow:dense}
 .vibe-tile{border-radius:.5rem;transition:transform .3s}
 .vibe-tile:hover{transform:scale(1.05);z-index:2}
 .vibe-tile:nth-child(2){background:linear-gradient(135deg,#06B6D4,#7C3AED)}
@@ -809,7 +809,7 @@ if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'st
   if(!grid) return;
   // Grid span configs: [col-span, row-span]
   const spans = [
-    [2,8],[2,1],[2,1],[3,8],[1,1],[2,1],[2,2],[2,1],[2,1]
+    [2,8],[2,1],[2,1],[3,8],[1,1],[4,1],[2,2],[2,1],[2,1]
   ];
   const tiles = Array.from(grid.children);
   // Fisher-Yates shuffle tiles
