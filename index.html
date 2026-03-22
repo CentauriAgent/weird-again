@@ -134,15 +134,13 @@ section{padding:6rem 0}
 .vibe-grid{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:80px;gap:.5rem;margin-top:3rem;border-radius:var(--radius);overflow:hidden}
 .vibe-tile{border-radius:.5rem;transition:transform .3s}
 .vibe-tile:hover{transform:scale(1.05);z-index:2}
-.vibe-tile:nth-child(1){grid-column:span 2;grid-row:span 8;background:transparent}
-.vibe-tile:nth-child(2){grid-column:span 2;background:linear-gradient(135deg,#06B6D4,#7C3AED)}
-.vibe-tile:nth-child(3){grid-column:span 2;background:linear-gradient(135deg,#FBBF24,#EC4899)}
-.vibe-tile:nth-child(4){grid-column:span 3;grid-row:span 8;background:transparent}
-.vibe-tile:nth-child(5){grid-column:span 1;background:linear-gradient(135deg,#A855F7,#FBBF24)}
-.vibe-tile:nth-child(6){grid-column:span 2;background:linear-gradient(135deg,#06B6D4,#EC4899)}
-.vibe-tile:nth-child(7){grid-column:span 2;grid-row:span 2;background:linear-gradient(135deg,#FBBF24,#06B6D4)}
-.vibe-tile:nth-child(8){grid-column:span 2;background:linear-gradient(135deg,#7C3AED,#06B6D4)}
-.vibe-tile:nth-child(9){grid-column:span 2;background:linear-gradient(135deg,#EC4899,#FBBF24)}
+.vibe-tile:nth-child(2){background:linear-gradient(135deg,#06B6D4,#7C3AED)}
+.vibe-tile:nth-child(3){background:linear-gradient(135deg,#FBBF24,#EC4899)}
+.vibe-tile:nth-child(5){background:linear-gradient(135deg,#A855F7,#FBBF24)}
+.vibe-tile:nth-child(6){background:linear-gradient(135deg,#06B6D4,#EC4899)}
+.vibe-tile:nth-child(7){background:linear-gradient(135deg,#FBBF24,#06B6D4)}
+.vibe-tile:nth-child(8){background:linear-gradient(135deg,#7C3AED,#06B6D4)}
+.vibe-tile:nth-child(9){background:linear-gradient(135deg,#EC4899,#FBBF24)}
 .vibe-caption{text-align:center;margin-top:1.5rem;color:var(--text-dim);font-size:1rem;font-style:italic}
 
 /* ============ APPS ============ */
@@ -809,13 +807,23 @@ if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'st
 (function(){
   const grid = document.querySelector('.vibe-grid');
   if(!grid) return;
+  // Grid span configs: [col-span, row-span]
+  const spans = [
+    [2,8],[2,1],[2,1],[3,8],[1,1],[2,1],[2,2],[2,1],[2,1]
+  ];
   const tiles = Array.from(grid.children);
-  // Fisher-Yates shuffle
+  // Fisher-Yates shuffle tiles
   for(let i = tiles.length - 1; i > 0; i--){
     const j = Math.floor(Math.random() * (i + 1));
-    grid.insertBefore(tiles[j], tiles[i]);
     [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
   }
+  // Clear and re-append in shuffled order, assigning spans by position
+  grid.innerHTML = '';
+  tiles.forEach((tile, i) => {
+    tile.style.gridColumn = 'span ' + spans[i][0];
+    tile.style.gridRow = spans[i][1] > 1 ? 'span ' + spans[i][1] : '';
+    grid.appendChild(tile);
+  });
 })();
 </script>
 </body>
