@@ -802,8 +802,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a=>{
 a.addEventListener('click',e=>{
 const target=document.querySelector(a.getAttribute('href'));
 if(target){e.preventDefault();target.scrollIntoView({behavior:'smooth',block:'start'})}
-});
-});
+})
+})
+
+// Shuffle vibe-grid tiles on each page load
+(function(){
+  const grid = document.querySelector('.vibe-grid');
+  if(!grid) return;
+  const tiles = Array.from(grid.children);
+  // Fisher-Yates shuffle
+  for(let i = tiles.length - 1; i > 0; i--){
+    const j = Math.floor(Math.random() * (i + 1));
+    grid.insertBefore(tiles[j], tiles[i]);
+    [tiles[i], tiles[j]] = [tiles[j], tiles[i]];
+  }
+})();
 </script>
 </body>
 </html>
