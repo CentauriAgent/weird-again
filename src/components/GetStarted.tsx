@@ -1,21 +1,15 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function GetStarted() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const stepsRef = useScrollReveal<HTMLDivElement>();
-  const afterRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="start">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">Get Started</span>
           <h2 className="section-title">
             You're <span className="grad-text">46 seconds</span> Away
           </h2>
           <p className="section-sub">Seriously. That's it. Three steps. No forms. No verification selfie. No waiting.</p>
         </div>
-        <div className="steps reveal" ref={stepsRef}>
+        <div className="steps reveal">
           <div className="step">
             <div className="step-num">1</div>
             <h3>Pick an App</h3>
@@ -35,7 +29,7 @@ export function GetStarted() {
             <div className="step-detail">Welcome to the open web ✨</div>
           </div>
         </div>
-        <div className="after-steps reveal" ref={afterRef}>
+        <div className="after-steps reveal">
           <p>⬆️ Back up your key when the app reminds you. It's your master password — save it somewhere safe.</p>
           <span className="time-badge">⏱ Average signup time: 46 seconds</span>
         </div>

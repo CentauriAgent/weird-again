@@ -1,5 +1,3 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 const apps = [
   {
     name: 'Ditto',
@@ -64,13 +62,10 @@ const apps = [
 ];
 
 export function Apps() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const gridRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="apps">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">Choose Your Vibe</span>
           <h2 className="section-title">
             One Account.<br />
@@ -78,7 +73,7 @@ export function Apps() {
           </h2>
           <p className="section-sub">Pick the one that speaks to you. Switch anytime — your stuff comes with you.</p>
         </div>
-        <div className="apps-grid reveal" ref={gridRef}>
+        <div className="apps-grid reveal">
           {apps.map((app) => (
             <div className="app-card" key={app.name}>
               <div className="app-header">

@@ -1,11 +1,7 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function Movement() {
-  const containerRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="movement">
-      <div className="container reveal" ref={containerRef}>
+      <div className="container reveal">
         <span className="section-label">The Movement</span>
         <h2 className="section-title">
           <span className="grad-text-alt">We're Rebuilding This Together</span>

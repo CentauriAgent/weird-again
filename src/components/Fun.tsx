@@ -1,5 +1,3 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 const features = [
   { emoji: '\u{1FA90}', title: 'Profile Planets', desc: "Your profile is YOUR planet. Custom colors, fonts, wallpapers \u2014 even use any emoji as your avatar shape. \u{1F537}\u{1F338}\u2B50 Share themes with friends. MySpace energy on steroids." },
   { emoji: '\u{1F3AE}', title: 'In-Feed Games', desc: 'Play online multiplayer games directly in your feed. Someone shares a game, you click and play. No downloads, no app store, no leaving the app.' },
@@ -12,14 +10,10 @@ const features = [
 ];
 
 export function Fun() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const featRef = useScrollReveal<HTMLDivElement>();
-  const gridRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="fun">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">The Vibe</span>
           <h2 className="section-title">
             Remember When the Internet<br />
@@ -27,7 +21,7 @@ export function Fun() {
           </h2>
           <p className="section-sub">Before every platform became the same doom-scroll of ads and influencer content? That energy is back.</p>
         </div>
-        <div className="fun-features reveal" ref={featRef}>
+        <div className="fun-features reveal">
           {features.map((f) => (
             <div className="fun-feat" key={f.title}>
               <span className="emoji">{f.emoji}</span>
@@ -36,7 +30,7 @@ export function Fun() {
             </div>
           ))}
         </div>
-        <div className="phone-mosaic reveal" ref={gridRef}>
+        <div className="phone-mosaic reveal">
           {/* Row 1 */}
           <div className="phone phone-1">
             <div className="phone-frame">

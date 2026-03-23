@@ -12,6 +12,7 @@ import { FAQ } from './components/FAQ';
 import { Movement } from './components/Movement';
 import { CTA } from './components/CTA';
 import { Footer } from './components/Footer';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export function App() {
   return (
@@ -30,6 +31,7 @@ export function App() {
       <Movement />
       <CTA />
       <Footer />
+      <ScrollToTop />
     </>
   );
 }

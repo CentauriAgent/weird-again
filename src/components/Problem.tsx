@@ -1,15 +1,8 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function Problem() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const gridRef = useScrollReveal<HTMLDivElement>();
-  const statRef = useScrollReveal<HTMLDivElement>();
-  const quoteRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="problem">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">The Problem</span>
           <h2 className="section-title">
             You Already Know<br />
@@ -17,7 +10,7 @@ export function Problem() {
           </h2>
           <p className="section-sub">The internet used to be weird and wonderful. Now it's just... ads and algorithms.</p>
         </div>
-        <div className="problem-grid reveal" ref={gridRef}>
+        <div className="problem-grid reveal">
           <div className="problem-card">
             <div className="icon">👁️</div>
             <h3>Your algorithm is lying to you</h3>
@@ -39,7 +32,7 @@ export function Problem() {
             <p>One rule change. One algorithm update. One "community guidelines violation." Years of your content — gone. Just like that.</p>
           </div>
         </div>
-        <div className="stat-row reveal" ref={statRef}>
+        <div className="stat-row reveal">
           <div className="stat">
             <div className="num">50%</div>
             <div className="label">of Americans cut back on social media in 2025</div>
@@ -53,7 +46,7 @@ export function Problem() {
             <div className="label">wants to create more and scroll less</div>
           </div>
         </div>
-        <div className="quote-block reveal" ref={quoteRef}>
+        <div className="quote-block reveal">
           "The juice is no longer worth the squeeze. People are performing labor for an algorithm that gives them nothing in return."
           <cite>— Joel Blackstock, Licensed Clinical Social Worker</cite>
         </div>

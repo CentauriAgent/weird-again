@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const faqData = [
   {
@@ -41,8 +40,6 @@ const faqData = [
 
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const gridRef = useScrollReveal<HTMLDivElement>();
 
   const handleToggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -51,13 +48,13 @@ export function FAQ() {
   return (
     <section id="faq">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">Real Talk</span>
           <h2 className="section-title">
             But Wait, <span className="grad-text">Is It...</span>
           </h2>
         </div>
-        <div className="faq-grid reveal" ref={gridRef}>
+        <div className="faq-grid reveal">
           {faqData.map((item, index) => (
             <div key={index} className={`faq-item${openIndex === index ? ' open' : ''}`}>
               <div className="faq-q" onClick={() => handleToggle(index)}>

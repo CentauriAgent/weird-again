@@ -1,15 +1,8 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function Zaps() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const flowRef = useScrollReveal<HTMLDivElement>();
-  const highlightRef = useScrollReveal<HTMLParagraphElement>();
-  const cashoutRef = useScrollReveal<HTMLParagraphElement>();
-
   return (
     <section id="zaps">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">Get Paid</span>
           <h2 className="section-title">
             Zaps ⚡ <span className="grad-text">Get Tipped For Being You</span>
@@ -18,7 +11,7 @@ export function Zaps() {
             No middleman taking 30-50%. No "creator fund." Real tips from real humans who like your stuff.
           </p>
         </div>
-        <div className="zap-flow reveal" ref={flowRef}>
+        <div className="zap-flow reveal">
           <div className="zap-step">
             <span className="z-icon">📝</span>
             <p>You post something cool</p>
@@ -39,10 +32,10 @@ export function Zaps() {
             <p>You get real money. Instantly.</p>
           </div>
         </div>
-        <p className="zap-highlight reveal" ref={highlightRef}>
+        <p className="zap-highlight reveal">
           That's it. Someone likes your post, they send you a tip. No platform taking a cut. No minimum followers. Just value flowing directly between people. ⚡
         </p>
-        <p className="zap-highlight reveal" ref={cashoutRef} style={{ marginTop: '1.5rem', color: 'var(--text-dim)', fontSize: '1.05rem' }}>
+        <p className="zap-highlight reveal" style={{ marginTop: '1.5rem', color: 'var(--text-dim)', fontSize: '1.05rem' }}>
           And if Bitcoin isn't your thing yet, no worries — most apps make it easy to cash out your tips straight to your bank account or local currency. Pay rent. Buy groceries. Your call.
         </p>
       </div>

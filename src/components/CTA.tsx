@@ -1,8 +1,4 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function CTA() {
-  const containerRef = useScrollReveal<HTMLDivElement>();
-
   const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     const target = document.querySelector(href);
     if (target) {
@@ -13,7 +9,7 @@ export function CTA() {
 
   return (
     <section id="cta">
-      <div className="container reveal" ref={containerRef}>
+      <div className="container reveal">
         <h2>
           <span className="grad-text">Ready?</span>
           <br />

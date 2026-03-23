@@ -1,14 +1,8 @@
-import { useScrollReveal } from '../hooks/useScrollReveal';
-
 export function WhatIsNostr() {
-  const headerRef = useScrollReveal<HTMLDivElement>();
-  const analogyRef = useScrollReveal<HTMLDivElement>();
-  const cardsRef = useScrollReveal<HTMLDivElement>();
-
   return (
     <section id="what">
       <div className="container">
-        <div className="reveal" ref={headerRef}>
+        <div className="reveal">
           <span className="section-label">The Fix</span>
           <h2 className="section-title">
             A New Way to Be Online<br />
@@ -16,7 +10,7 @@ export function WhatIsNostr() {
           </h2>
           <p className="section-sub">Nostr is social media that actually respects you. And it works like something you already know.</p>
         </div>
-        <div className="email-analogy reveal" ref={analogyRef}>
+        <div className="email-analogy reveal">
           <p>
             Think about <strong>email</strong>. You can use Gmail, Yahoo, Outlook — they all work together. Someone on Gmail can email someone on Yahoo. You can switch apps and keep talking to the same people.
           </p>
@@ -24,7 +18,7 @@ export function WhatIsNostr() {
             <strong>Now imagine if social media worked the same way.</strong> That's Nostr. One account. Every app. Your stuff goes with you.
           </p>
         </div>
-        <div className="value-cards reveal" ref={cardsRef}>
+        <div className="value-cards reveal">
           <div className="value-card">
             <div className="v-icon">🎨</div>
             <h3>Own Your Content</h3>
