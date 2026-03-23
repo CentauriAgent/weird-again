@@ -85,16 +85,16 @@ export function Fun() {
           <div className="phone phone-7">
             <div className="phone-frame">
               <div className="phone-notch" />
-              <img src="/screenshots/nests-rooms.png" alt="Nests live audio rooms" loading="lazy" />
+              <img src="/screenshots/ditto-profile.png" alt="Ditto profile view" loading="lazy" />
             </div>
-            <span className="phone-label">Nests</span>
+            <span className="phone-label">Ditto</span>
           </div>
           <div className="phone phone-8">
             <div className="phone-frame">
               <div className="phone-notch" />
-              <img src="/screenshots/ditto-profile.png" alt="Ditto profile view" loading="lazy" />
+              <img src="/screenshots/nests-rooms.png" alt="Nests live audio rooms" loading="lazy" />
             </div>
-            <span className="phone-label">Ditto</span>
+            <span className="phone-label">Nests</span>
           </div>
           <div className="phone phone-9">
             <div className="phone-frame">
