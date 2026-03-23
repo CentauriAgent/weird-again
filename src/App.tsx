@@ -1,4 +1,5 @@
 import { Navbar } from './components/Navbar';
+import { MobileNav } from './components/MobileNav';
 import { Floaters } from './components/Floaters';
 import { Hero } from './components/Hero';
 import { Problem } from './components/Problem';
@@ -16,6 +17,7 @@ export function App() {
   return (
     <>
       <Navbar />
+      <MobileNav />
       <Floaters />
       <Hero />
       <Problem />
