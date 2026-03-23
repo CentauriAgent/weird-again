@@ -202,11 +202,9 @@ nav.scrolled{background:rgba(10,10,15,.92);backdrop-filter:blur(15px);border-bot
 /* ============ RESPONSIVE ============ */
 @media(max-width:768px){
   section{padding:4rem 0}
-  .phone-mosaic{grid-template-columns:repeat(2,1fr);gap:1.5rem 1rem}
-  .phone-7,.phone-8,.phone-9{display:none}
+  .phone-mosaic{grid-template-columns:repeat(3,1fr);gap:1rem .5rem}
   .stat-row{gap:1.5rem}
 }
 @media(max-width:480px){
-  .phone-mosaic{grid-template-columns:repeat(2,1fr);gap:1rem .5rem}
-  .phone-4,.phone-5,.phone-6,.phone-7,.phone-8,.phone-9{display:none}
+  .phone-mosaic{grid-template-columns:repeat(2,1fr);gap:.75rem .5rem}
 }
